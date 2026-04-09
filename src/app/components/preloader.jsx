@@ -18,8 +18,6 @@ export default function Loader({ onComplete }) {
       const elapsed = t - start;
 
       let p = Math.min(elapsed / duration, 1);
-
-      // 🔥 smooth natural easing
       p = 1 - Math.pow(1 - p, 2.2);
 
       setProgress(p * 100);
@@ -58,32 +56,22 @@ export default function Loader({ onComplete }) {
                 ease: [0.6, 0, 0.2, 1],
               },
             }}
-            style={{
-              position: "fixed",
-              inset: 0,
-              zIndex: 9999,
-              background: "#000",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "56px",
-            }}
+            className="fixed inset-0 z-[9999] bg-black flex flex-col items-center justify-center gap-10 sm:gap-14 px-4"
           >
-            {/* 🔥 TEXT (PURE FADE + BLUR REVEAL) */}
+            {/* TEXT */}
             <h1
+              className="flex whitespace-nowrap"
               style={{
                 fontFamily: "'Playfair Display', serif",
                 fontWeight: 400,
-                fontSize: "clamp(3rem, 8vw, 5.5rem)",
-                letterSpacing: "0.35em",
+                fontSize: "clamp(2rem, 8vw, 5.5rem)",
+                letterSpacing: "clamp(0.15em, 2vw, 0.35em)",
                 color: "#fff",
-                display: "flex",
               }}
             >
               {fullText.split("").map((char, i) => {
                 const charProgress =
-                  progress / 100 * fullText.length - i;
+                  (progress / 100) * fullText.length - i;
 
                 const visible = Math.max(
                   0,
@@ -111,23 +99,10 @@ export default function Loader({ onComplete }) {
               })}
             </h1>
 
-            {/* 🔥 PROGRESS BAR */}
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                gap: "14px",
-              }}
-            >
-              <div
-                style={{
-                  width: "260px",
-                  height: "1px",
-                  background: "rgba(255,255,255,0.1)",
-                  overflow: "hidden",
-                }}
-              >
+            {/* PROGRESS BAR */}
+            <div className="flex flex-col items-center gap-3 sm:gap-4 w-full max-w-[300px]">
+              
+              <div className="w-full h-[2px] bg-white/10 overflow-hidden">
                 <motion.div
                   style={{
                     height: "100%",
@@ -141,9 +116,9 @@ export default function Loader({ onComplete }) {
                 style={{
                   fontFamily: "'Cormorant Garamond', serif",
                   fontWeight: 300,
-                  color: "rgba(255,255,255,0.35)",
-                  fontSize: "0.6rem",
-                  letterSpacing: "0.4em",
+                  color: "rgba(255,255,255,0.4)",
+                  fontSize: "clamp(0.6rem, 2vw, 0.8rem)",
+                  letterSpacing: "0.35em",
                 }}
               >
                 {Math.floor(progress)

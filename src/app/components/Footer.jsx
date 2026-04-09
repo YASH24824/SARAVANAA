@@ -1,5 +1,5 @@
 "use client";
- import Link from "next/link";
+import Link from "next/link";
 
 const FONT_STYLE = {
   heading: "font-[Playfair_Display]",
@@ -11,13 +11,13 @@ const Footer = () => {
   return (
     <footer className="w-full bg-[#faf8f5] border-t border-gray-200">
       
-      <div className="max-w-7xl mx-auto px-6 md:px-10 py-12 md:py-16">
+      <div className="max-w-7xl mx-auto px-4 md:px-10 py-10 md:py-16">
 
-        {/* TOP GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+        {/* ✅ TOP GRID */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-10">
 
           {/* BRAND */}
-          <div>
+          <div className="text-center md:text-left">
             <h2 className={`text-2xl text-black ${FONT_STYLE.heading} ${FONT_STYLE.weight} mb-4`}>
               SARAVANAA
             </h2>
@@ -27,74 +27,77 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* LINKS */}
-      
+          {/* ✅ MOBILE: wrapper | DESKTOP: normal column */}
+          <div className="md:contents">
+            
+         {/* QUICK LINKS + CATEGORIES */}
+<div className="col-span-1 md:col-span-2">
+  
+  {/* ✅ Mobile → 2 columns | Desktop → normal */}
+  <div className="grid grid-cols-2 gap-6 md:grid-cols-2">
 
-<div>
-  <h3 className="text-sm uppercase tracking-wider text-gray-500 mb-4">
-    Quick Links
-  </h3>
+    {/* QUICK LINKS */}
+    <div className="text-center md:text-left">
+      <h3 className="text-sm uppercase tracking-wider text-gray-500 mb-4">
+        Quick Links
+      </h3>
 
-  <ul className="space-y-2 text-sm">
+      <ul className="space-y-2 text-sm">
+        <li>
+          <Link href="/#about" className="text-gray-700 hover:text-black transition">
+            About
+          </Link>
+        </li>
 
-    {/* ABOUT → scroll to section */}
-    <li>
-      <Link
-        href="/#about"
-        className="text-gray-700 hover:text-black transition"
-      >
-        About
-      </Link>
-    </li>
+        <li>
+          <Link href="/contact" className="text-gray-700 hover:text-black transition">
+            Contact
+          </Link>
+        </li>
+      </ul>
+    </div>
 
-    {/* CONTACT → go to page */}
-    <li>
-      <Link
-        href="/contact"
-        className="text-gray-700 hover:text-black transition"
-      >
-        Contact
-      </Link>
-    </li>
+    {/* CATEGORIES */}
+    <div className="text-center md:text-left">
+      <h3 className="text-sm uppercase tracking-wider text-gray-500 mb-4">
+        Categories
+      </h3>
 
-  </ul>
+      <ul className="space-y-2 text-sm">
+        <li>
+          <Link href="/mens" className="text-gray-700 hover:text-black transition">
+            Men
+          </Link>
+        </li>
+
+        <li>
+          <Link href="/womens" className="text-gray-700 hover:text-black transition">
+            Women
+          </Link>
+        </li>
+
+        <li>
+          <Link href="/kids" className="text-gray-700 hover:text-black transition">
+            Kids
+          </Link>
+        </li>
+
+        <li>
+          <Link href="/jewellery" className="text-gray-700 hover:text-black transition">
+            Jewellery
+          </Link>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
 </div>
 
-
-<div>
-  <h3 className="text-sm uppercase tracking-wider text-gray-500 mb-4">
-    Categories
-  </h3>
-
-  <ul className="space-y-2 text-sm">
-    <li>
-      <Link href="/mens" className="text-gray-700 hover:text-black transition">
-        Men
-      </Link>
-    </li>
-
-    <li>
-      <Link href="/womens" className="text-gray-700 hover:text-black transition">
-        Women
-      </Link>
-    </li>
-
-    <li>
-      <Link href="/kids" className="text-gray-700 hover:text-black transition">
-        Kids
-      </Link>
-    </li>
-
-    <li>
-      <Link href="/jewellery" className="text-gray-700 hover:text-black transition">
-        Jewellery
-      </Link>
-    </li>
-  </ul>
-</div>
+          </div>
 
           {/* CONTACT */}
-          <div>
+          <div className="text-center md:text-left">
             <h3 className="text-sm uppercase tracking-wider text-gray-500 mb-4">
               Contact
             </h3>
@@ -106,15 +109,17 @@ const Footer = () => {
           </div>
 
         </div>
-
-        {/* BOTTOM */}
-      <div className="border-t border-gray-200 my-5"></div>
-
-<div className="flex justify-center items-center text-sm text-gray-500">
-  <p>© {new Date().getFullYear()} YourBrand. All rights reserved.</p>
-</div>
-
       </div>
+
+      {/* BOTTOM */}
+      <div className="border-t border-gray-200 mt-3"></div>
+
+      <div className="flex justify-center items-center text-sm text-gray-500 py-2">
+        <p className="m-0">
+          © {new Date().getFullYear()} YourBrand. All rights reserved.
+        </p>
+      </div>
+
     </footer>
   );
 };

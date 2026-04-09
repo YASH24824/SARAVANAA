@@ -398,104 +398,112 @@ export default function MensCollection() {
       )}
 
       {/* Hero Section - Multiple Men with Different Outfits */}
-      <div className="relative h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60 z-10" />
-        
-        {/* Background Image Grid - 3 Men with different outfits */}
-        <div className="absolute inset-0 z-0 grid grid-cols-3">
-          {/* Man 1 - Formal Suit */}
-          <div className="relative overflow-hidden">
-            <Image
-              src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&q=90"
-              alt="Man in formal suit"
-              fill
-              className="object-cover object-center"
-              style={{ animation: 'slowZoom 20s ease-out forwards' }}
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent" />
-          </div>
-          
-          {/* Man 2 - Casual / Smart Casual */}
-          <div className="relative overflow-hidden">
-            <Image
-              src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=800&q=90"
-              alt="Man in casual outfit"
-              fill
-              className="object-cover object-center"
-              style={{ animation: 'slowZoom 22s ease-out forwards' }}
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/40" />
-          </div>
-          
-          {/* Man 3 - Leather Jacket / Modern */}
-          <div className="relative overflow-hidden">
-            <Image
-              src="https://images.unsplash.com/photo-1504593811423-6dd665756598?w=800&q=90"
-              alt="Man in leather jacket"
-              fill
-              className="object-cover object-center"
-              style={{ animation: 'slowZoom 18s ease-out forwards' }}
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-l from-black/30 to-transparent" />
-          </div>
-        </div>
-        
-        {/* Content Overlay */}
-        <div className="relative z-20 text-center px-6 max-w-5xl mx-auto">
-          <Link href="/">
-           
-          </Link>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <span className="text-white/80 tracking-[0.3em] text-sm font-light font-['Cormorant_Garamond'] block mb-4">
-              
-            </span>
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-['Playfair_Display'] text-white tracking-wide font-normal leading-tight">
-              Men's
-              <br />
-              Collection
-            </h1>
-          </motion.div>
-          
-          <motion.div 
-            initial={{ width: 0 }}
-            animate={{ width: "100px" }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="h-px bg-white/60 mx-auto mt-8"
-          />
-          
-          <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="text-white/80 mt-8 font-['Cormorant_Garamond'] text-base md:text-lg tracking-[0.3em] font-light max-w-2xl mx-auto"
-          >
-            SOPHISTICATED APPAREL FOR THE MODERN GENTLEMAN
-          </motion.p>
-          
-          <motion.button
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            className="mt-10 px-10 py-3 border border-white/30 text-white hover:bg-white/10 hover:border-white/50 transition-all duration-500 font-['Cormorant_Garamond'] text-sm tracking-[0.2em] font-light backdrop-blur-sm"
-            style={{ cursor: 'pointer' }}
-          >
-            EXPLORE COLLECTION
-          </motion.button>
-        </div>
-        
-       
-        
-       
-      </div>
+  <div className="relative h-[85vh] md:h-screen flex items-center justify-center overflow-hidden">
+
+  {/* Background Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70 z-10" />
+
+  {/* 🔥 RESPONSIVE IMAGE GRID */}
+  <div className="absolute inset-0 z-0 grid grid-cols-1 md:grid-cols-3">
+
+    {/* Man 1 (VISIBLE ON MOBILE) */}
+    <div className="relative overflow-hidden">
+      <Image
+        src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&q=90"
+        alt="Man in formal suit"
+        fill
+        className="object-cover object-center scale-105"
+        style={{ animation: "slowZoom 20s ease-out forwards" }}
+        priority
+      />
+      <div className="absolute inset-0 bg-black/50 md:bg-gradient-to-r md:from-black/30 md:to-transparent" />
+    </div>
+
+    {/* Man 2 (HIDDEN ON MOBILE) */}
+    <div className="relative overflow-hidden hidden md:block">
+      <Image
+        src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=800&q=90"
+        alt="Man in casual outfit"
+        fill
+        className="object-cover object-center scale-105"
+        style={{ animation: "slowZoom 22s ease-out forwards" }}
+        priority
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/40" />
+    </div>
+
+    {/* Man 3 (HIDDEN ON MOBILE) */}
+    <div className="relative overflow-hidden hidden md:block">
+      <Image
+        src="https://images.unsplash.com/photo-1504593811423-6dd665756598?w=800&q=90"
+        alt="Man in leather jacket"
+        fill
+        className="object-cover object-center scale-105"
+        style={{ animation: "slowZoom 18s ease-out forwards" }}
+        priority
+      />
+      <div className="absolute inset-0 bg-gradient-to-l from-black/30 to-transparent" />
+    </div>
+  </div>
+
+  {/* CONTENT */}
+  <div className="relative z-20 text-center px-4 sm:px-6 max-w-4xl mx-auto">
+
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.9 }}
+    >
+      <h1 className="font-['Playfair_Display'] text-white tracking-wide font-normal leading-[1.05] text-[34px] sm:text-[50px] md:text-8xl lg:text-9xl">
+
+        {/* MOBILE */}
+        <span className="block md:hidden">
+          Men's Collection
+        </span>
+
+        {/* DESKTOP */}
+        <span className="hidden md:block">
+          Men's <br /> Collection
+        </span>
+      </h1>
+    </motion.div>
+
+    {/* LINE */}
+    <motion.div
+      initial={{ width: 0 }}
+      animate={{ width: "70px" }}
+      transition={{ duration: 0.8, delay: 0.3 }}
+      className="h-px bg-white/60 mx-auto mt-5 sm:mt-8"
+    />
+
+    {/* TEXT */}
+    <motion.p
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.5 }}
+      className="text-white/80 mt-4 sm:mt-6 font-['Cormorant_Garamond']
+      text-[11px] sm:text-base tracking-[0.25em] sm:tracking-[0.3em] font-light"
+    >
+      SOPHISTICATED APPAREL FOR THE MODERN GENTLEMAN
+    </motion.p>
+
+    {/* BUTTON */}
+    <motion.button
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.8 }}
+      className="mt-6 sm:mt-10 px-6 sm:px-10 py-2.5 sm:py-3
+      border border-white/30 text-white
+      hover:bg-white/10 hover:border-white/50
+      transition-all duration-500
+      font-['Cormorant_Garamond']
+      text-[11px] sm:text-sm tracking-[0.2em] font-light backdrop-blur-sm"
+    >
+      EXPLORE COLLECTION
+    </motion.button>
+
+  </div>
+</div>
 
       {/* Main Content */}
       <div className="max-w-[1400px] mx-auto px-6 py-24">

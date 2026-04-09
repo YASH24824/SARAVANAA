@@ -414,100 +414,96 @@ export default function KidsCollection() {
         </div>
       )}
 
-      {/* Hero Section - Multiple Children with Different Outfits */}
-      <div className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
+    {/* Hero Section - Multiple Children with Different Outfits */}
+<div className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
 
-        {/* Cinematic Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/70 z-10" />
+  {/* Cinematic Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/70 z-10" />
 
-        {/* Background Image Grid - 3 Children with different outfits */}
-        <div className="absolute inset-0 z-0 grid grid-cols-3">
-          
-          {/* Child 1 - Formal Wear */}
-          <div className="relative overflow-hidden">
-            <Image
-              src="https://images.unsplash.com/photo-1684244160171-97f5dac39204?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="Child in formal wear"
-              fill
-              className="object-cover object-center scale-110 animate-zoomSlow"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/20 to-transparent" />
-          </div>
+  {/* ✅ Responsive Image Grid */}
+  <div className="absolute inset-0 z-0 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+    
+    {/* Child 1 */}
+    <div className="relative overflow-hidden">
+      <Image
+        src="https://images.unsplash.com/photo-1684244160171-97f5dac39204?q=80&w=687&auto=format&fit=crop"
+        alt="Child in formal wear"
+        fill
+        className="object-cover object-center scale-110 animate-zoomSlow"
+        priority
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/20 to-transparent" />
+    </div>
 
-          {/* Child 2 - Casual Playful */}
-          <div className="relative overflow-hidden">
-            <Image
-              src="https://images.unsplash.com/photo-1545696968-1a5245650b36?w=1200&q=90"
-              alt="Child in casual outfit"
-              fill
-              className="object-cover object-center scale-110 animate-zoomSlow2"
-              priority
-            />
-            <div className="absolute inset-0 bg-black/20 backdrop-blur-[1px]" />
-          </div>
+    {/* Child 2 */}
+    <div className="relative overflow-hidden hidden sm:block">
+      <Image
+        src="https://images.unsplash.com/photo-1545696968-1a5245650b36?w=1200&q=90"
+        alt="Child in casual outfit"
+        fill
+        className="object-cover object-center scale-110 animate-zoomSlow2"
+        priority
+      />
+      <div className="absolute inset-0 bg-black/20 backdrop-blur-[1px]" />
+    </div>
 
-          {/* Child 3 - Party Dress */}
-          <div className="relative overflow-hidden">
-            <Image
-              src="https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=1200&q=90"
-              alt="Child in party dress"
-              fill
-              className="object-cover object-center scale-110 animate-zoomSlow3"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-l from-black/50 via-black/20 to-transparent" />
-          </div>
-        </div>
+    {/* Child 3 */}
+    <div className="relative overflow-hidden hidden md:block">
+      <Image
+        src="https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=1200&q=90"
+        alt="Child in party dress"
+        fill
+        className="object-cover object-center scale-110 animate-zoomSlow3"
+        priority
+      />
+      <div className="absolute inset-0 bg-gradient-to-l from-black/50 via-black/20 to-transparent" />
+    </div>
+  </div>
 
-        {/* Content */}
-        <div className="relative z-20 text-center px-6 max-w-6xl mx-auto">
+  {/* ✅ Content */}
+  <div className="relative z-20 text-center px-4 sm:px-6 max-w-5xl mx-auto">
 
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <span className="text-white/50 tracking-[0.3em] text-xs font-['Cormorant_Garamond'] block mb-4">
-            
-            </span>
-            <h1 className="text-[42px] sm:text-[64px] md:text-[90px] lg:text-[120px] font-['Playfair_Display'] text-white tracking-tight leading-[0.9]">
-              Kids'
-              <br />
-              Collection
-            </h1>
-          </motion.div>
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+    >
+      <h1 className="text-[34px] sm:text-[52px] md:text-[90px] lg:text-[120px] font-['Playfair_Display'] text-white leading-[1] tracking-tight">
+        Kids'
+        <br />
+        Collection
+      </h1>
+    </motion.div>
 
-          <motion.div 
-            initial={{ width: 0 }}
-            animate={{ width: "80px" }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="h-px bg-white/40 mx-auto mt-6"
-          />
+    <motion.div 
+      initial={{ width: 0 }}
+      animate={{ width: "70px" }}
+      transition={{ duration: 0.8, delay: 0.3 }}
+      className="h-px bg-white/40 mx-auto mt-5"
+    />
 
-          <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="text-white/60 mt-6 font-['Cormorant_Garamond'] text-sm tracking-[0.3em] font-light"
-          >
-            PLAYFUL STYLE • TIMELESS ELEGANCE
-          </motion.p>
+    <motion.p 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8, delay: 0.5 }}
+      className="text-white/70 mt-5 font-['Cormorant_Garamond'] text-[10px] sm:text-sm tracking-[0.25em]"
+    >
+      PLAYFUL STYLE • TIMELESS ELEGANCE
+    </motion.p>
 
-          {/* CTA Button */}
-          <motion.button
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, duration: 0.6 }}
-            className="mt-10 px-10 py-3 border border-white/40 text-white text-xs tracking-[0.2em] uppercase hover:bg-white hover:text-black transition-all duration-500 font-['Cormorant_Garamond']"
-          >
-            Explore Collection
-          </motion.button>
+    {/* CTA */}
+    <motion.button
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.7 }}
+      className="mt-8 sm:mt-10 px-6 sm:px-10 py-2.5 sm:py-3 border border-white/40 text-white text-[10px] sm:text-xs tracking-[0.2em] uppercase hover:bg-white hover:text-black transition-all duration-500 font-['Cormorant_Garamond']"
+    >
+      Explore Collection
+    </motion.button>
 
-        </div>
+  </div>
 
-
-      </div>
+</div>
 
       {/* Main Content */}
       <div className="max-w-[1400px] mx-auto px-6 py-24">

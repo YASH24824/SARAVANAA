@@ -427,101 +427,109 @@ export default function WomensCollection() {
         </div>
       )}
 
-      {/* Hero Section - Multiple Women with Different Outfits */}
-      <div className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
+    {/* Hero Section - Multiple Women with Different Outfits */}
+<div className="relative h-[85vh] md:h-screen flex items-center justify-center overflow-hidden bg-black">
 
-        {/* Cinematic Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/80 z-10" />
+  {/* Cinematic Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/80 z-10" />
 
-        {/* Background Image Grid - 3 Women with different outfits */}
-        <div className="absolute inset-0 z-0 grid grid-cols-3">
-          
-          {/* Woman 1 - Evening Gown */}
-          <div className="relative overflow-hidden">
-            <Image
-              src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=1200&q=90"
-              alt="Woman in evening gown"
-              fill
-              className="object-cover object-center scale-110 animate-zoomSlow"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent" />
-          </div>
+  {/* 🔥 RESPONSIVE IMAGE GRID */}
+  <div className="absolute inset-0 z-0 grid grid-cols-1 md:grid-cols-3">
+    
+    {/* Woman 1 (VISIBLE ON MOBILE) */}
+    <div className="relative overflow-hidden">
+      <Image
+        src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=1200&q=90"
+        alt="Woman in evening gown"
+        fill
+        className="object-cover object-center scale-105 md:scale-110 animate-zoomSlow"
+        priority
+      />
+      <div className="absolute inset-0 bg-black/50 md:bg-gradient-to-r md:from-black/60 md:via-black/20 md:to-transparent" />
+    </div>
 
-          {/* Woman 2 - Power Suit */}
-          <div className="relative overflow-hidden">
-            <Image
-              src="https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=1200&q=90"
-              alt="Woman in power suit"
-              fill
-              className="object-cover object-center scale-110 animate-zoomSlow2"
-              priority
-            />
-            <div className="absolute inset-0 bg-black/30 backdrop-blur-[2px]" />
-          </div>
+    {/* Woman 2 (HIDDEN ON MOBILE) */}
+    <div className="relative overflow-hidden hidden md:block">
+      <Image
+        src="https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=1200&q=90"
+        alt="Woman in power suit"
+        fill
+        className="object-cover object-center scale-110 animate-zoomSlow2"
+        priority
+      />
+      <div className="absolute inset-0 bg-black/30 backdrop-blur-[2px]" />
+    </div>
 
-          {/* Woman 3 - Casual Chic */}
-          <div className="relative overflow-hidden">
-            <Image
-              src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=1200&q=90"
-              alt="Woman in casual outfit"
-              fill
-              className="object-cover object-center scale-110 animate-zoomSlow3"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-l from-black/60 via-black/20 to-transparent" />
-          </div>
-        </div>
+    {/* Woman 3 (HIDDEN ON MOBILE) */}
+    <div className="relative overflow-hidden hidden md:block">
+      <Image
+        src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=1200&q=90"
+        alt="Woman in casual outfit"
+        fill
+        className="object-cover object-center scale-110 animate-zoomSlow3"
+        priority
+      />
+      <div className="absolute inset-0 bg-gradient-to-l from-black/60 via-black/20 to-transparent" />
+    </div>
+  </div>
 
-        {/* Content */}
-        <div className="relative z-20 text-center px-6 max-w-6xl mx-auto">
+  {/* CONTENT */}
+  <div className="relative z-20 text-center px-4 sm:px-6 max-w-5xl mx-auto">
 
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <span className="text-white/60 tracking-[0.3em] text-xs font-['Cormorant_Garamond'] block mb-4">
-   
-            </span>
-            <h1 className="text-[42px] sm:text-[64px] md:text-[90px] lg:text-[120px] font-['Playfair_Display'] text-white tracking-tight leading-[0.9]">
-              Women's
-              <br />
-              Collection
-            </h1>
-          </motion.div>
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+    >
+      <h1 className="font-['Playfair_Display'] text-white tracking-wide font-normal leading-[1.05] text-[34px] sm:text-[50px] md:text-8xl lg:text-9xl">
 
-          <motion.div 
-            initial={{ width: 0 }}
-            animate={{ width: "80px" }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="h-px bg-white/40 mx-auto mt-6"
-          />
+        {/* MOBILE */}
+        <span className="block md:hidden">
+          Women's Collection
+        </span>
 
-          <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="text-white/60 mt-6 font-['Cormorant_Garamond'] text-sm tracking-[0.3em] font-light"
-          >
-            TIMELESS ELEGANCE • MODERN SOPHISTICATION
-          </motion.p>
+        {/* DESKTOP */}
+        <span className="hidden md:block">
+          Women's <br /> Collection
+        </span>
+      </h1>
+    </motion.div>
 
-          {/* CTA Button */}
-          <motion.button
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, duration: 0.6 }}
-            className="mt-10 px-10 py-3 border border-white/40 text-white text-xs tracking-[0.2em] uppercase hover:bg-white hover:text-black transition-all duration-500 font-['Cormorant_Garamond']"
-          >
-            Explore Collection
-          </motion.button>
+    {/* LINE */}
+    <motion.div
+      initial={{ width: 0 }}
+      animate={{ width: "60px" }}
+      transition={{ duration: 0.8, delay: 0.3 }}
+      className="h-px bg-white/40 mx-auto mt-5 sm:mt-6"
+    />
 
-        </div>
+    {/* TEXT */}
+    <motion.p
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.5 }}
+      className="text-white/60 mt-4 sm:mt-6 font-['Cormorant_Garamond']
+      text-[10px] sm:text-sm tracking-[0.25em] sm:tracking-[0.3em] font-light"
+    >
+      TIMELESS ELEGANCE • MODERN SOPHISTICATION
+    </motion.p>
 
-  
+    {/* BUTTON */}
+    <motion.button
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.7 }}
+      className="mt-6 sm:mt-10 px-6 sm:px-10 py-2.5 sm:py-3
+      border border-white/40 text-white
+      text-[10px] sm:text-xs tracking-[0.2em] uppercase
+      hover:bg-white hover:text-black
+      transition-all duration-500 font-['Cormorant_Garamond']"
+    >
+      Explore Collection
+    </motion.button>
 
-      </div>
+  </div>
+</div>
 
       {/* Main Content */}
       <div className="max-w-[1400px] mx-auto px-6 py-24">
